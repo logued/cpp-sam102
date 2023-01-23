@@ -46,7 +46,7 @@ int main() {
 
     cout << "Max value storable in a long long int = " << LLONG_MAX << endl;// 19 digits !
 
-    long long int worldPopulation = 80092456000;  // 8 billion in Jan 2023
+    long long int worldPopulation = 8009245600;  // 8 billion in Jan 2023
 
     // output the size of the 'double' data type
     cout << "sizeof(double) in bytes = " << sizeof(double) << endl;
