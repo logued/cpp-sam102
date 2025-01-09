@@ -1,11 +1,15 @@
-// sam102
+// sam102                                                Jan 2025
 // Primitive (Built-In) Data Types and their sizes
 
+// In C++, all variables have a type (e.g. int, double) and each type of variable
+// has a precise size - measured in bytes. (Type sizes may vary between systems)
+//
+
+#include <cstdint>
 #include <iostream>
 
 // To avoid continuously prefixing objects with "std::" - e.g. "std::cout"
-// We can declare that we are using the namespace throughout this file.
-
+// We can declare that we are using the standard namespace (std) throughout this file.
 using namespace std;
 
 int main() {
@@ -13,27 +17,29 @@ int main() {
     cout << "sam102 - basic data types and sizeof operator" << endl;
     cout << "Size of various data types in bytes on this computer:" << endl;
 
-    cout << "Size of char : " << sizeof(char) << " (Min:" << CHAR_MIN << "; Max:" << CHAR_MAX << ")" << endl;
+    cout << "Size of char (character): " << sizeof(char) << " (Min value:" << CHAR_MIN << "; Max value:" << CHAR_MAX << ")" << endl;
     cout << "Size of unsigned char : " << sizeof(unsigned char) << " ( Min:" << 0 << "; Max:" << UCHAR_MAX << ")" <<endl;
 
     cout << "Size of int : " << sizeof(int) << " (Min:" << INT32_MIN << "; Max:" << INT32_MAX << ")" << endl;
-    cout << "Size of unsigned int : " << sizeof(unsigned int) << " (Min:" << 0 << "; Max:" << UINT32_MAX << ")" << endl;
+    cout << "Size of unsigned int : " << sizeof(unsigned int) << " (Min value:" << 0 << "; Max value:" << UINT32_MAX << ")" << endl;
 
-    cout << "Size of long : " << sizeof(long) << endl;
+    cout << "Size of long integer: " << sizeof(long) << endl;
 
     cout << "Size of float : " << sizeof(float) << endl;
     cout << "Size of double : " << sizeof(double) << endl;
 
     char c = CHAR_MAX;  // -128 to +127
     cout << "Max value in unsigned char c = " << c << endl;  // shows the ASCII character for 127
-    cout << "Max value in unsigned char c = " << +c << endl; // the + causes the integer value in c to display
+    cout << "Max value in unsigned char c = " << +c << endl; // the + causes the integer value in c to display as opposed to the character in c
 
     // An int (of size 4 bytes) can store over 4 billion different values,
     // ranging from approx: -2 billion to +2 billion (i.e. 2,147,483,647)
-
+    // ( Big! - but not big enough to store a count of the world's population!
+    //
     int i = INT_MAX;  // a constant representing the max int value (for a 4-byte int) <limits.h>
 
-    // Variables can overflow and underflow. Can be a source of Error.
+    // Variables can overflow and underflow. Overflow can be a source of Error.
+    //
     cout << "Max int value in i = " << i << endl;
     cout << "adding one to i (i++) causes an overflow in this case " << endl;
     i++;
@@ -69,4 +75,4 @@ int main() {
 
 //TODO
 // Q1. Display the size in bytes of a 'long long int'
-// Print out the value of the worldPopulation variable.
+// Print out the value stored in the worldPopulation variable.
